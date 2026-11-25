@@ -8,13 +8,13 @@
   - [x] 2.1 Tokens, case folding, comments, line continuation
   - [x] 2.2 Unit tests
   - [x]* 2.3 Property test: keyword case never changes tokens (R1)
-- [ ] 3. Types and AST
-  - [ ] 3.1 Add `Expr`, `Stmt`, `Handler`, `Result`
-  - [ ] 3.2 Add fast-check AST generators in `test/props/gen.ts`
-- [ ] 4. Parser
-  - [ ] 4.1 Handlers, `put`, `get`, `go`, `answer`
-  - [ ] 4.2 `if` and `repeat`
-  - [ ] 4.3 Errors with line and column
+- [x] 3. Types and AST
+  - [x] 3.1 Add `Expr`, `Stmt`, `Handler`, `Result`
+  - [x] 3.2 Add fast-check AST generators in `test/props/gen.ts`
+- [x] 4. Parser
+  - [x] 4.1 Handlers, `put`, `get`, `go`, `answer`
+  - [x] 4.2 `if` and `repeat`
+  - [x] 4.3 Errors with line and column
   - _Requirements: R2_
 - [ ] 5. Printer
   - [ ] 5.1 Canonical printing

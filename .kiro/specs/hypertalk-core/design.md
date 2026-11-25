@@ -14,22 +14,14 @@ source -> lexer -> tokens -> parser -> AST -> interpreter <-> Host
 type Result<T, E = StackTalkError> = { ok: true; value: T } | { ok: false; error: E };
 type StackTalkError = { message: string; line: number; col: number };
 
-type Expr =
-  | { t: 'str'; v: string } | { t: 'num'; v: string }
-  | { t: 'var'; name: string }
-  | { t: 'bin'; op: '+'|'-'|'*'|'/'|'&'|'&&'|'='|'<'|'>'; l: Expr; r: Expr }
-  | { t: 'field'; name: string };
-
-type Stmt =
-  | { t: 'put'; value: Expr; mode: 'into'|'before'|'after'; target: Expr }
-  | { t: 'get'; value: Expr }
-  | { t: 'go'; card: Expr }
-  | { t: 'answer'; value: Expr }
-  | { t: 'pass'; name: string }
-  | { t: 'if'; cond: Expr; then: Stmt[]; else?: Stmt[] }
-  | { t: 'repeat'; kind: RepeatKind; body: Stmt[] };
-
+// Full definitions: src/core/ast.ts (source of truth).
+type Expr = str | num | var | field(card?, ref) | un(- | not) | bin(op)
+// op: + - * / div mod ^ & && = <> < > <= >= and or   ("is" = "=", "is not" = "<>")
+type Stmt = put | get | go | answer | pass | send(name, args) | if | repeat
+type RepeatKind = forever | times | while | until | with(i = a [down] to b)
 type Handler = { name: string; params: string[]; body: Stmt[] };
+
+// Precedence, low to high: or, and, = <>, < > <= >=, & &&, + -, * / div mod, ^ (right), unary - not
 
 interface Host {
   getField(name: string): string;

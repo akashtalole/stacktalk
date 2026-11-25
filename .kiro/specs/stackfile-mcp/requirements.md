@@ -32,8 +32,12 @@ so an agent can port stacks without guessing a binary format.
 - Test with a few public-domain stacks and generated ones.
 
 ## Tasks
-- [ ] 1. Block reader with bounds checks (M3, M2.3)
-- [ ] 2. `inspect_stack`, `get_card`, `extract_scripts`
-- [ ] 3. `convert_stack`, `lookup_command`
-- [ ] 4. Folder allowlist and size limit (M2)
-- [ ]* 5. Property tests
+- [x] 1. Block reader with bounds checks (M3, M2.3)
+- [x] 2. `inspect_stack`, `get_card`, `extract_scripts`
+- [x] 3. `convert_stack`, `lookup_command`
+- [x] 4. Folder allowlist (symlinks resolved) and size limit (M2)
+- [x]* 5. Property tests (random bytes, damaged stacks, generated round trip)
+- [ ] 6. Test against real public-domain HyperCard 2.x stacks
+- [ ] 7. Decode BMAP pictures (WOBA) — stretch goal
+
+Layout source: [HyperCard file format](https://hypercard.org/hypercard_file_format_pierre/) (unofficial, reverse engineered).
