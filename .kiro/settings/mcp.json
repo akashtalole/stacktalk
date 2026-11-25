@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "stackfile": {
+      "command": "node",
+      "args": ["mcp/stackfile/dist/server.js"],
+      "env": { "STACKFILE_ALLOWED": "./stacks" },
+      "disabled": false
+    }
+  }
+}

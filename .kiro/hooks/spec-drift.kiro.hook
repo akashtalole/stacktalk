@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Spec drift check",
+  "description": "When requirements change, check design and tasks still match",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [".kiro/specs/**/requirements.md"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Compare the edited requirements with design.md and tasks.md in the same folder. List any requirement with no task, and any task with no requirement. Propose edits, do not apply them."
+  }
+}

@@ -1,0 +1,31 @@
+# Tasks: HyperTalk core
+
+- [x] 1. Project setup
+  - [x] 1.1 Vite + TypeScript strict + Vitest + fast-check
+  - [x] 1.2 Add `npm test`, `test:props`, `lint` scripts
+  - _Requirements: all_
+- [x] 2. Lexer
+  - [x] 2.1 Tokens, case folding, comments, line continuation
+  - [x] 2.2 Unit tests
+  - [x]* 2.3 Property test: keyword case never changes tokens (R1)
+- [ ] 3. Types and AST
+  - [ ] 3.1 Add `Expr`, `Stmt`, `Handler`, `Result`
+  - [ ] 3.2 Add fast-check AST generators in `test/props/gen.ts`
+- [ ] 4. Parser
+  - [ ] 4.1 Handlers, `put`, `get`, `go`, `answer`
+  - [ ] 4.2 `if` and `repeat`
+  - [ ] 4.3 Errors with line and column
+  - _Requirements: R2_
+- [ ] 5. Printer
+  - [ ] 5.1 Canonical printing
+  - [ ]* 5.2 Property test: round trip (R3)
+  - [ ]* 5.3 Property test: idempotent printing (R3)
+- [ ] 6. Interpreter
+  - [ ] 6.1 Values and number rules
+  - [ ] 6.2 Containers: variables, `it`, fields
+  - [ ] 6.3 Message chain and `pass`
+  - [ ] 6.4 Step limit and plain-English errors
+  - [ ]* 6.5 Property test: no throw, always ends (R4)
+  - [ ]* 6.6 Property test: arithmetic vs reference model (R4)
+  - [ ]* 6.7 Property test: same seed gives same effects (R5)
+- [ ] 7. Checkpoint: all tests pass, update "Verified rules" in steering

@@ -1,0 +1,14 @@
+{
+  "enabled": true,
+  "name": "Test core on save",
+  "description": "Run unit and property tests when a core file changes",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/core/**/*.ts"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run `npm test` and `npm run test:props`. If a property test fails, show the shrunk counterexample and explain which rule in the spec it breaks. Do not edit tests to make them pass."
+  }
+}
